@@ -19,6 +19,7 @@ $grey1200-opacity10: #272C3410;
 $grey1200-opacity20: #272C3420;
 $grey1200-opacity30: #272C3430;
 $grey1200-opacity50: #272C3450;
+$grey1200-opacity80: #272C3480;
 
 // DEFAULT
 $backgroundColor: $grey300;
@@ -333,7 +334,7 @@ header {
 .form_field {
   position: relative;
 box-sizing: border-box;
-  width: 600px;
+  width: 500px;
   height: 85vh;
   margin: 64px;
   z-index: 9998;
@@ -376,7 +377,7 @@ form {
   justify-content: start;
   box-sizing: border-box;
   border-radius: 16px;
-  padding: 48px 48px 0 48px;
+  padding: 32px 32px 0 32px;
   align-items: center;
   gap: 32px;
   height: 100%;
@@ -386,7 +387,7 @@ form {
 }
 
 form> :last-child {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 header,

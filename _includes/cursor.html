@@ -8,7 +8,7 @@
         opacity: 1
       });
       $(document).bind('mousemove', function (e) {
-        if ($(e.target).hasClass('container, input, button, choose-file, select') || $(e.target).closest('.container, input, button, .choose-file, select').length > 0) {
+        if ($(e.target).hasClass('container, input, button, choose-file, select, a, dynamic-icon') || $(e.target).closest('.container, input, button, .choose-file, select, a, .dynamic-icon').length > 0) {
           $(cursor).addClass('zoom');
         } else {
           $(cursor).removeClass('zoom');
