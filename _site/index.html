@@ -8,34 +8,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
-    <div class="result">
+    
+<div class="result"  id="result">
 
-
-
-
-
-
-
-
+    <!-- CURSOR -->
     <div id="cursor"></div>
     <div id="pointer"></div>
 
-
-
-
-
-
-
-
-
+    <!-- FORM FIELD -->
     <div class="form_field">
         <form action="upload" method="post" enctype="multipart/form-data" id="myform" role="form">
-
-
-
-
 
             <!-- HEADER -->
             <header>
@@ -58,9 +43,6 @@
                         d="M87.2416 12.9501H90.2047L92.9536 8.20203L95.7203 12.9501H99.0047L94.9706 6.30993L98.612 0.187378H95.6489L93.2392 4.43568L90.8116 0.187378H87.545L91.2935 6.39918L87.2416 12.9501Z"
                         fill="#16181D" />
                 </svg>
-
-
-
                 <h1>Show Tile Playground</h1>
                 <p>We know. It's hard to keep up with all the vessels and the font-sizes. That's why we're kicking off
                     Hulu sandbox with a show tile generator.</p>
@@ -74,6 +56,8 @@
                 </label>
             </div>
 
+
+    
             <!-- WIDTH -->
             <div class="number-input">
                 <label>Pixel Width</label><br><br>
@@ -85,7 +69,7 @@
                 <label>Pixel Height</label><br><br>
                 <input type="number" id="height" />
             </div>
-
+ 
 
             <!-- SHOW TITLE -->
             <div class="text-input">
@@ -103,45 +87,33 @@
                         <option value="HULU ORIGINALS">Hulu Originals</option>
                         <option value="FOX">Fox</option>
                     </select>
-
                 </div>
-
-
-
-
             </div>
 
+            <!-- EXPORT -->
             <div class="submit-container">
-
-
                 <button type="submit" id="export" onclick="showInput(event)"> export</button>
             </div>
-
-
 
         </form>
     </div>
 
-
-
-
-
+    <!-- MADEWITHLOVE -->
     <div class="madewithlove">
+
+        <svg width="55" height="18" viewBox="0 0 55 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26.2257 12.8807C26.2257 13.1982 26.1069 13.4697 25.8694 13.6951C25.6319 13.9206 25.3555 14.0345 25.038 14.0345H22.5317C22.2141 14.0345 21.9427 13.9206 21.7172 13.6951C21.4918 13.4697 21.3779 13.1982 21.3779 12.8807V5.62591H17.0391V13.254C17.0391 14.7689 17.4851 15.9373 18.3771 16.7614C19.2691 17.5855 20.4616 17.9976 21.9524 17.9976H26.2233C27.5564 17.9976 28.6133 17.5564 29.3938 16.6765C30.1743 15.7942 30.5621 14.655 30.5621 13.254V5.62591H26.2233V12.8807H26.2257Z" />
+            <path d="M12.5645 6.72879C11.6604 5.99434 10.4751 5.62591 9.0062 5.62591H6.22597C5.81875 5.62591 5.46971 5.66469 5.17399 5.74468C4.8807 5.82467 4.73284 5.87557 4.73284 5.89739V0H0.396454V18H4.73526V10.7452C4.73526 10.4301 4.85404 10.1514 5.09158 9.91382C5.32912 9.67627 5.60545 9.5575 5.92298 9.5575H8.43174C8.74684 9.5575 9.01832 9.67627 9.24617 9.91382C9.47159 10.1514 9.58552 10.4277 9.58552 10.7452V18H13.9243V10.1708C13.9219 8.60975 13.4686 7.46324 12.5645 6.72879Z" />
+            <path d="M50.6661 5.62591V12.8807C50.6661 13.1982 50.5521 13.4697 50.3267 13.6951C50.1013 13.9206 49.8298 14.0345 49.5123 14.0345H47.0035C46.686 14.0345 46.4097 13.9206 46.1721 13.6951C45.9346 13.4697 45.8158 13.1982 45.8158 12.8807V5.62591H41.5109V13.254C41.5109 14.7689 41.9521 15.9373 42.832 16.7614C43.7143 17.5855 44.9117 17.9976 46.4242 17.9976H50.6612C52.0162 17.9976 53.0779 17.5637 53.8487 16.6935C54.617 15.8233 55 14.6768 55 13.254V5.62591H50.6661Z" />
+            <path d="M38.1926 0H33.8538V18H38.1926V0Z" />
+            </svg>
         <p class="rainbow_text_animated">Made with 💚 <br> by Greenhouse</p>
+
+            
     </div>
 
-
-
-
-
-
+    <!-- OUTPUT -->
     <div class="container" alt="container" id="container1">
-
-
-
-
-
-
         <img id="i" src="#">
         <div id="result_table" class="overlay">
             <p> <span id='display'>
@@ -182,8 +154,6 @@
                 <svg width="128" height="32" viewBox="0 0 128 32" class="wrapper__networks__network is-visible"
                     data-network-code="HULU ORIGINALS" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" fill="none">
-
-
                     <path opacity="0.7"
                         d="M86.6209 0.866516H123.202C125.372 0.866516 127.133 2.6282 127.133 4.79766V27.2041C127.133 29.3736 125.372 31.1352 123.202 31.1352H86.6218C84.4524 31.1352 82.6907 29.3736 82.6907 27.2041V4.79676C82.6907 2.6273 84.4515 0.866516 86.6209 0.866516Z"
                         fill="black" />
@@ -221,21 +191,16 @@
                     <path
                         d="M117.769 22.706H118.416C118.462 23.07 118.609 23.3732 119.22 23.3732C119.62 23.3732 119.902 23.1505 119.902 22.8169C119.902 22.4834 119.735 22.3573 119.15 22.2616C118.285 22.1453 117.875 21.8824 117.875 21.2046C117.875 20.6135 118.38 20.1682 119.134 20.1682C119.888 20.1682 120.377 20.5223 120.449 21.2144H119.832C119.766 20.8353 119.548 20.6734 119.134 20.6734C118.72 20.6734 118.513 20.8701 118.513 21.1491C118.513 21.4425 118.634 21.5891 119.261 21.6803C120.111 21.7966 120.551 22.0398 120.551 22.7624C120.551 23.3893 120.02 23.8802 119.221 23.8802C118.236 23.8802 117.821 23.3893 117.771 22.7069L117.769 22.706Z"
                         fill="white" />
-
-
                 </svg>
 
             </div>
-
-
         </div>
-
-
     </div>
-
 </div>
 
+<!-- SCRIPTS -->
 
+<!-- FILE INPUT -->
 <script>
     window.addEventListener('load', function () {
         document.querySelector('input[type="file"]').addEventListener('change', function () {
@@ -251,6 +216,7 @@
     });
 </script>
 
+<!-- FORM -->
 <script>
     function showInput(e) {
         e.preventDefault();
@@ -263,19 +229,17 @@
     }
 </script>
 
+<!-- NETWORKS -->
 <script>
     let networkSelect = document.getElementById('network-select');
     let updateSelected = function (e) {
         document.querySelector('.is-visible').classList.remove('is-visible');
         document.querySelector('[data-network-code="' + e.target.value + '"]').classList.add('is-visible');
     };
-
     networkSelect.addEventListener('change', updateSelected);
 </script>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- DIMENSIONS -->
 <script>var x;
     $("button[type=submit]").click(function () {
         x = $("#width").val();
@@ -283,13 +247,18 @@
     });
 </script>
 
-
-<script>var y;
+<!-- SAVE EXPORT -->
+<script>
     $("button[type=submit]").click(function () {
-        y = $("#height").val();
-        $(".container").css("height", y);
-    });</script>
-
+        html2canvas(document.getElementById("container1"), { logging: true, letterRendering: 1, allowTaint: true, useCORS: true })
+            .then
+            (canvas => {
+                canvas.toBlob(function (blob) {
+                    window.saveAs(blob, 'hello.jpg');
+                });
+            });
+    });
+</script>
 
 <script>
     // result
@@ -427,71 +396,110 @@ function dragElement(containerElement) {
 }
 
 </script>
-
-
 <script>
-jQuery(document).ready(function ($) {
-  function Cursor(cursor, pointer) {
-    cursor.css({
-      opacity: 1
-    });
-    pointer.css({
-      opacity: 1
-    });
-    $(document).bind('mousemove', function (e) {
-      if ($(e.target).hasClass('container','input') || $(e.target).closest('.container', 'input').length > 0) {
-        $(cursor).addClass('zoom');
-      } else {
-        $(cursor).removeClass('zoom');
-      }
+  jQuery(document).ready(function ($) {
+    function Cursor(cursor, pointer) {
       cursor.css({
-        left: e.pageX,
-        top: e.pageY
+        opacity: 1
       });
       pointer.css({
-        left: e.pageX,
-        top: e.pageY
+        opacity: 1
       });
+      $(document).bind('mousemove', function (e) {
+        if ($(e.target).hasClass('container, input, button, choose-file, select') || $(e.target).closest('.container, input, button, .choose-file, select').length > 0) {
+          $(cursor).addClass('zoom');
+        } else {
+          $(cursor).removeClass('zoom');
+        }
+        cursor.css({
+          left: e.pageX,
+          top: e.pageY
+        });
+        pointer.css({
+          left: e.pageX,
+          top: e.pageY
+        });
+      });
+    }
+    function destroyCursor(cursor, pointer) {
+      cursor.css('opacity', '0');
+      pointer.css('opacity', '0');
+      //$(document).unbind('mousemove');
+    }
+    $(document).mouseleave(function () {
+      destroyCursor($('#cursor'), $('#pointer'));
     });
-  }
-  function destroyCursor(cursor, pointer) {
-    cursor.css('opacity', '0');
-    pointer.css('opacity', '0');
-    //$(document).unbind('mousemove');
-  }
-  $(document).mouseleave(function () {
-    destroyCursor($('#cursor'), $('#pointer'));
-  });
-  $(document).mouseenter(function () {
+    $(document).mouseenter(function () {
+      Cursor($('#cursor'), $('#pointer'));
+    });
+    $(document).on('click', function (e) {
+      $('#cursor').css('animation', 'cursorClick 500ms');
+      setTimeout(() => { $('#cursor').css('animation', '') }, 700);
+    });
     Cursor($('#cursor'), $('#pointer'));
-  });
-  $(document).on('click', function (e) {
-    $('#cursor').css('animation', 'cursorClick 700ms');
-    setTimeout(()=>{$('#cursor').css('animation', '')},700);
-  });
-  Cursor($('#cursor'), $('#pointer'));
-  $('#logo-ydevs').on('click', function(){
-    $(this).toggleClass('scroll');
-  });
-
-});
-  
-
-</script>
-
-
-
-
-
-<script>
-   $("button[type=submit]").click(function (){
-        html2canvas(document.getElementById("container1"), { logging: true, letterRendering: 1, allowTaint: true, useCORS: true })
-            .then(canvas => {
-                canvas.toBlob(function (blob) {
-                    window.saveAs(blob, 'hello.jpg');
-                });
-            });
+    $('#logo-ydevs').on('click', function () {
+      $(this).toggleClass('scroll');
     });
+
+  });
+
+
 </script>
+<!-- <script>
+    // create canvas element and append it to document #result
+var canvas = document.createElement('canvas');
+document.getElementById("result2").appendChild(canvas);
+
+// some hotfixes... ( ≖_≖)
+document.getElementById("result2").style.margin = 0;
+canvas.style.position = 'fixed';
+
+// get canvas 2D context and set him correct size
+var ctx = canvas.getContext('2d');
+resize();
+
+// last known position
+var pos = { x: 0, y: 0 };
+
+window.addEventListener('resize', resize);
+document.addEventListener('mousemove', draw);
+document.addEventListener('mousedown', setPosition);
+document.addEventListener('mouseenter', setPosition);
+
+// new position from mouse event
+function setPosition(e) {
+  pos.x = e.clientX;
+  pos.y = e.clientY;
+}
+
+// resize canvas
+function resize() {
+  ctx.canvas.width = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
+}
+
+function draw(e) {
+  // mouse left button must be pressed
+  if (e.buttons !== 1) return;
+
+  ctx.beginPath(); // begin
+
+  ctx.lineWidth = 5;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = '#c0392b';
+
+  ctx.moveTo(pos.x, pos.y); // from
+  setPosition(e);
+  ctx.lineTo(pos.x, pos.y); // to
+
+  ctx.stroke(); // draw it!
+}
+</script> -->
+
+<!-- <script>var y;
+    $("button[type=submit]").click(function () {
+        y = $("#height").val();
+        $(".container").css("height", y);
+    });</script> -->
   </body>
 </html>

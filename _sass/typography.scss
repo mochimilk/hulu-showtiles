@@ -17,6 +17,11 @@ h4 {
     line-height: 100%;
 }
 
+p {
+    line-height: 150%;
+    color: $grey900;
+}
+
 label {
     color: $bodyColor;
     font-family: 'Poppins', sans-serif;
@@ -25,13 +30,6 @@ label {
     font-weight: 600;
     line-height: 100%;
 }
-
-p {
-    line-height: 150%;
-    color: $grey900;
-}
-
-
 
 br {
     content: "";
