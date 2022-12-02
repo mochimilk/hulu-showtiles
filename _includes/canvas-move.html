@@ -1,0 +1,136 @@
+<script>
+    // result
+window.onload = function () {
+	"use strict";
+
+	var result = {
+		//get container element
+		container: document.getElementById("result"),
+
+		//get container array
+		container: document.getElementsByClassName("container"),
+
+		//get radius
+		getRad: function () {
+			return this.container[0].offsetHeight * 0.5;
+		},
+
+		//make array of y positions
+		locs: [],
+
+		//get ran y num
+		ranY: function () {
+			return Math.floor(
+				Math.random() * (this.container.offsetHeight - this.getRad() * 2) +
+					this.getRad()
+			);
+		},
+
+		//get ran y num
+		ranX: function () {
+			return Math.floor(
+				Math.random() * (this.container.offsetWidth - this.getRad() * 2) +
+					this.getRad()
+			);
+		},
+
+		//checkNum
+		checkNum: function () {
+			var x = this.ranX(),
+				y = this.ranY();
+
+			for (var i = 0; i < this.locs.length; i++) {
+				//loop through once for each item in locs array
+				if (
+					x > this.locs[i][0] - this.getRad() &&
+					x <= this.locs[i][0] + this.getRad() &&
+					y > this.locs[i][1] - this.getRad() &&
+					y <= this.locs[i][1] + this.getRad()
+				) {
+					this.checkNum(); //run this function again
+					return; //leave function
+				}
+			}
+			this.locs.push([x, y]); //add nums to locs
+		},
+		//loop through and check for conflict
+		checkLoop: function () {
+			for (var i = 0; i <= this.container.length; i++) {
+				//add num to array for each container / incl one extra set
+				this.checkNum();
+			}
+			this.move();
+		},
+		move: function () {
+			for (var i = 0; i < this.container.length; i++) {
+				this.container[i].style.left = this.locs[i + 1][0] + "px";
+				this.container[i].style.top = this.locs[i + 1][1] + "px";
+
+				var rot8 = Math.floor(Math.random() * 720) - 360;
+
+				this.container[i].getElementsByTagName("p")[0].style.WebkitTransform =
+					"rotate(" + rot8 + "deg)";
+				this.container[i].getElementsByTagName("p")[0].style.msTransform =
+					"rotate(" + rot8 + "deg)";
+				this.container[i].getElementsByTagName("p")[0].style.transform =
+					"rotate(" + rot8 + "deg)";
+			}
+		},
+		go: function () {
+			this.checkLoop();
+		}
+	};
+
+	result.container.style.display = "block";
+	result.go();
+
+	window.onresize = function () {
+		result.locs = []; //clear array vals
+		result.go();
+	};
+
+	window.onclick = function () {
+		result.locs = []; //clear array vals
+		result.go();
+	};
+};
+
+// containerS
+dragElement(document.querySelector("#container1"));
+dragElement(document.querySelector("#container2"));
+dragElement(document.querySelector("#container3"));
+dragElement(document.querySelector("#container4"));
+
+function dragElement(containerElement) {
+	let pos1 = 0,
+		pos2 = 0,
+		pos3 = 0,
+		pos4 = 0;
+	containerElement.onpointerdown = pointerDrag;
+
+	function pointerDrag(e) {
+		e.preventDefault();
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+
+		document.onpointermove = elementDrag;
+		document.onpointerup = stopElementDrag;
+	}
+
+	function elementDrag(e) {
+		pos1 = pos3 - e.clientX;
+		pos2 = pos4 - e.clientY;
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+
+		containerElement.style.top = containerElement.offsetTop - pos2 + "px";
+		containerElement.style.left = containerElement.offsetLeft - pos1 + "px";
+	}
+
+	function stopElementDrag() {
+		document.onpointerup = null;
+		document.onpointermove = null;
+	}
+}
+
+</script>
