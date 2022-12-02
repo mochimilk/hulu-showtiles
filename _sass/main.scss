@@ -325,8 +325,8 @@ span#display {
 }
 
 header {
-  svg {
-    fill: $tertiary;
+  circle.sandbox {
+    fill: $tertiary !important;
   }
 
 }

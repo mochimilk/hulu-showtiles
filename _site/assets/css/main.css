@@ -75,7 +75,7 @@ span#display { display: block; text-align: left; width: 100%; margin: 0; padding
 
 .overlay { position: absolute; bottom: 0; background: black; background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); color: #E8EAED; width: 100%; font-size: 16px; text-transform: uppercase; letter-spacing: .1rem; font-weight: 600; line-height: 100%; padding: 64px 24px 16px 24px; text-align: center; box-sizing: border-box; }
 
-header svg { fill: #29A869; }
+header circle.sandbox { fill: #29A869 !important; }
 
 .form_field { position: relative; box-sizing: border-box; width: 500px; height: 85vh; margin: 64px; z-index: 9998; border-radius: 16px; overflow: hidden; backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25x); background-blend-mode: overlay; background-color: rgba(232, 234, 237, 0.8); resize: both; min-width: 350px; min-height: 350px; max-width: 600px; max-height: 85vh; }
 
