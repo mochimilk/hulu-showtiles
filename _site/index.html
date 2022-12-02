@@ -3,8 +3,11 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>Show Tile Playground - </title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>Show Tile Playground - Hulu Sandbox</title>
+    <link rel="stylesheet" href="/hulu-showtiles/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
   </head>
   <body>
     <div class="result">
@@ -467,19 +470,14 @@ jQuery(document).ready(function ($) {
 
 
 <script>
-    var node = document.getElementById('container1');
-var btn = document.getElementById('export');
-
-btn.onclick = function() {
-node.innerHTML = "I'm an image now."
-  domtoimage.toBlob(document.getElementById('container1'))
-    .then(function(blob) {
-      window.saveAs(blob, 'my-node.png');
+    $( "#export" ).on( "click", function() {
+      html2canvas(document.querySelector("#container1")).then(canvas => {
+        canvas.toBlob(function(blob) {
+          window.saveAs(blob, 'hello.png');
+        });
+        });
     });
-}
-
-</script>
-
+  </script>
 
 
 

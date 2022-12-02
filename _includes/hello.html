@@ -275,18 +275,13 @@
 
 
 <script>
-    var node = document.getElementById('container1');
-var btn = document.getElementById('export');
-
-btn.onclick = function() {
-node.innerHTML = "I'm an image now."
-  domtoimage.toBlob(document.getElementById('container1'))
-    .then(function(blob) {
-      window.saveAs(blob, 'my-node.png');
+    $( "#export" ).on( "click", function() {
+      html2canvas(document.querySelector("#container1")).then(canvas => {
+        canvas.toBlob(function(blob) {
+          window.saveAs(blob, 'hello.png');
+        });
+        });
     });
-}
-
-</script>
-
+  </script>
 
 
