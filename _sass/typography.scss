@@ -8,6 +8,14 @@ font-weight: 600;
 line-height: 100%;
 }
 
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    letter-spacing: -.025em;
+    font-weight: 600;
+    line-height: 100%;  
+}
+
 h4 {
     color: $bodyColor;
     font-family: 'Poppins', sans-serif;
@@ -18,12 +26,13 @@ h4 {
 }
 
 p {
+font-size: 16px;
     line-height: 150%;
     color: $grey900;
 }
 
 label {
-
+color: $bodyColor;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     text-transform: uppercase;
@@ -36,4 +45,10 @@ br {
     margin: 2em;
     display: block;
     font-size: 24%;
+  }
+
+  .p_small {
+    font-size: 13.5px;
+    line-height: 115%;
+    color: $grey800;
   }

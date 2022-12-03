@@ -25,6 +25,12 @@ button[type=submit]:hover { cursor: none; }
 
 button[type=submit]:active { animation: active-bump .1s forwards; }
 
+button[type=refresh] { font-family: 'Poppins', sans-serif; background-color: transparent; border: none; color: #16181D; padding: 16px 32px; border-radius: 4px; text-align: center; display: inline-block; font-size: 12px; text-transform: uppercase; letter-spacing: .1rem; font-weight: 600; height: 48px; line-height: 100%; width: 100%; }
+
+button[type=refresh]:hover { background-color: #272C3420; cursor: none; }
+
+button[type=refresh]:active { animation: active-bump .1s forwards; }
+
 input[type=text] { outline: 0; border-width: 0 0 2px; border-color: #8B94A7; background-color: transparent; height: auto; width: 100%; padding: 8px 0; }
 
 input[type=text]:hover { border-color: #586174; }
@@ -49,7 +55,7 @@ select:hover { background-color: #272C3410; }
 
 select:focus { background-color: #272C3410; outline: none; }
 
-.container { position: absolute; right: 20vw; top: 10vh; width: 400px; height: 600px; border-radius: 20px; overflow: hidden; background-color: #D9DCE2; z-index: 2; }
+.container { position: absolute; right: 20vw; top: 10vh; width: 400px; height: 600px; border-radius: 20px; overflow: hidden; background-color: #D9DCE2; z-index: 3000; }
 
 .container img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -77,23 +83,23 @@ span#display { display: block; text-align: left; width: 100%; margin: 0; padding
 
 header circle.sandbox { fill: #29A869 !important; }
 
-.form_field { position: relative; box-sizing: border-box; width: 500px; height: 85vh; margin: 64px; z-index: 9998; border-radius: 16px; overflow: hidden; backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25x); background-blend-mode: overlay; background-color: rgba(232, 234, 237, 0.8); resize: both; min-width: 350px; min-height: 350px; max-width: 600px; max-height: 85vh; }
+.form_field { position: relative; box-sizing: border-box; width: 450px; height: 85vh; margin: 64px; z-index: 9998; border-radius: 16px; backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25x); background-blend-mode: overlay; background-color: rgba(232, 234, 237, 0.8); resize: both; min-width: 350px; min-height: 350px; max-width: 600px; max-height: 85vh; overflow-y: hidden; }
 
 ::-webkit-resizer { background: transparent; border-radius: 500px; }
 
 form { position: absolute; display: flex; flex-flow: column; height: 100vh; gap: 32px; width: 100%; justify-content: start; box-sizing: border-box; border-radius: 16px; padding: 32px 32px 0 32px; align-items: center; gap: 32px; height: 100%; overflow-x: hidden; overflow-y: auto; }
 
-form > :last-child { margin-bottom: 32px; }
+form > :nth-last-child(2) { margin-bottom: 168px; }
 
 header, input[type=submit], .number-input, .text-input, .dropdown-input, .upload-input { flex: 0 1 auto; width: 100%; }
 
-.submit-container { flex: 1 1 auto; width: 100%; display: flex; flex-direction: column; justify-content: end; }
+.submit-container { display: flex; flex-direction: column; gap: 8px; width: 100%; position: fixed; bottom: 0; background: #e8eaed; background: linear-gradient(0deg, #e8eaed 0%, rgba(232, 234, 237, 0) 100%); padding: 32px; box-sizing: border-box; }
 
 .wrapper { border-radius: 8px; width: 100%; position: relative; }
 
 .wrapper:hover, .wrapper:focus, .wrapper:active { background-color: #272C3410; }
 
-.wrapper__select { width: 100%; height: 48px; color: #16181D; font-family: 'Poppins', sans-serif; font-size: 12px; text-transform: uppercase; font-weight: 600; line-height: 100%; background-color: #272C3410; cursor: pointer; }
+.wrapper__select { width: 100%; height: 48px; color: #586174; font-family: 'Poppins', sans-serif; font-size: 12px; text-transform: uppercase; font-weight: 600; line-height: 100%; background-color: #272C3410; cursor: pointer; }
 
 .wrapper__networks { position: relative; top: 0; left: 0; width: 100%; }
 
@@ -109,17 +115,21 @@ header, input[type=submit], .number-input, .text-input, .dropdown-input, .upload
 
 h1 { font-family: 'Poppins', sans-serif; font-size: 40px; letter-spacing: -.025em; font-weight: 600; line-height: 100%; }
 
+h2 { font-family: 'Poppins', sans-serif; font-size: 24px; letter-spacing: -.025em; font-weight: 600; line-height: 100%; }
+
 h4 { color: #16181D; font-family: 'Poppins', sans-serif; font-size: 12px; text-transform: uppercase; font-weight: 600; line-height: 100%; }
 
-p { line-height: 150%; color: #586174; }
+p { font-size: 16px; line-height: 150%; color: #586174; }
 
-label { font-family: 'Poppins', sans-serif; font-size: 12px; text-transform: uppercase; font-weight: 600; line-height: 100%; }
+label { color: #16181D; font-family: 'Poppins', sans-serif; font-size: 12px; text-transform: uppercase; font-weight: 600; line-height: 100%; }
 
 br { content: ""; margin: 2em; display: block; font-size: 24%; }
 
+.p_small { font-size: 13.5px; line-height: 115%; color: #6E7A91; }
+
 html, body { cursor: none; }
 
-#cursor { opacity: 0; position: absolute; top: 50%; left: 50%; width: 50px; height: 50px; border: 1px solid #586174; border-radius: 50px; z-index: 1000000; margin: -30px; -webkit-transform: scale(1); transform: scale(1); -webkit-transition: .1s linear all; transition: .1s linear all; pointer-events: none; box-sizing: border-box; }
+#cursor { opacity: 0; position: absolute; top: 50%; left: 50%; width: 50px; height: 50px; border: 1px solid #586174; border-radius: 50px; z-index: 1000000; margin: -30px; -webkit-transform: scale(1); transform: scale(1); -webkit-transition: .07s linear all; transition: .07s linear all; pointer-events: none; box-sizing: border-box; }
 
 #cursor.zoom { border: 0.1px dashed #586174; -webkit-transform: scale(0.75); transform: scale(0.75); backdrop-filter: invert(80%); }
 
@@ -142,7 +152,7 @@ a.dynamic-icon > div { text-align: center; margin: 0; position: absolute; top: 5
 
 a.dynamic-icon:hover { background-size: 200% 200%; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(5x); background-blend-mode: overlay; }
 
-.gloop { transform: rotate(90deg); position: absolute; right: -160px; top: 155px; width: 580px; }
+.gloop { transform: rotate(90deg); position: absolute; right: -160px; top: 155px; width: 580px; opacity: .2; }
 
 circle { fill: rgba(185, 64, 245, 0.582); }
 

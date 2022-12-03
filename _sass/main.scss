@@ -10,6 +10,8 @@ $tertiary: #29A869;
 $grey1300: #16181D;
 $grey1200: #272C34;
 $grey900: #586174;
+$grey800: #6E7A91;
+$grey700:#8B94A7;
 $grey500: #C5CAD3;
 $grey400: #D9DCE2;
 $grey300: #E8EAED;
@@ -66,6 +68,7 @@ body {
   padding: 0;
 }
 
+
 .choose-file {
   font-family: 'Poppins', sans-serif;
   background-color: transparent;
@@ -112,17 +115,38 @@ button[type=submit] {
   height: 48px;
   line-height: 100%;
   width: 100%;
-
   &:hover {
-
     cursor: none;
-
   }
-
   &:active {
     animation: active-bump .1s forwards;
   }
 }
+button[type=refresh] {
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: $bodyColor;
+  padding: 16px 32px;
+  border-radius: 4px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 600;
+  height: 48px;
+  line-height: 100%;
+  width: 100%;
+  &:hover {
+    background-color: $grey1200-opacity20;
+    cursor: none;
+  }
+  &:active {
+    animation: active-bump .1s forwards;
+  }
+}
+
 
 input[type=text] {
   outline: 0;
@@ -223,7 +247,7 @@ select {
   border-radius: 20px;
   overflow: hidden;
   background-color: $grey400;
-  z-index: 2;
+  z-index: 3000;
   img {
     width: 100%;
     height: 100%;
@@ -335,12 +359,12 @@ header {
 .form_field {
   position: relative;
 box-sizing: border-box;
-  width: 500px;
+  width: 450px;
   height: 85vh;
   margin: 64px;
   z-index: 9998;
   border-radius: 16px;
-overflow: hidden;
+
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25x);
   background-blend-mode: overlay;
@@ -351,6 +375,8 @@ overflow: hidden;
   max-width: 600px;
   max-height: 85vh;
 
+    overflow-y: hidden;
+    
 
 }
 
@@ -387,8 +413,8 @@ form {
 
 }
 
-form> :last-child {
-  margin-bottom: 32px;
+form> :nth-last-child(2) {
+  margin-bottom: 168px;
 }
 
 header,
@@ -402,12 +428,23 @@ input[type=submit],
 }
 
 .submit-container {
-  flex: 1 1 auto;
-  width: 100%;
+
+
 
   display: flex;
   flex-direction: column;
-  justify-content: end
+  gap: 8px;
+
+
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: rgb(232,234,237);
+    background: linear-gradient(0deg, rgba(232,234,237,1) 0%, rgba(232,234,237,0) 100%);
+    padding: 32px;
+    box-sizing: border-box;
+
+    
 }
 
 .wrapper {
@@ -424,7 +461,7 @@ input[type=submit],
 .wrapper__select {
   width: 100%;
   height: 48px;
-  color: $bodyColor;
+  color: $grey900;
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   text-transform: uppercase;

@@ -65,14 +65,19 @@ a.dynamic-icon:hover {
     right: -160px;
     top: 155px;
     width: 580px;
+    opacity: .2;
+
+
   }
 
 circle {
     fill: rgba(185, 64, 245, 0.582);
+
   }
   circle.bounce {
     fill: rgb(255, 165, 123);
     animation: bounce 10s infinite alternate;
+    
   }
   @keyframes bounce {
     0%   { transform: translate(-25px,0); }
