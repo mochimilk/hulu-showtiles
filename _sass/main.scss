@@ -190,24 +190,15 @@ input[type=number] {
 
 
 
-input[type=number]:after,
-input[type=number]:before {
-  position: absolute;
-  pointer-events: none;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number]:after {
-  color: blue;
-  content: "\25B2";
-
-}
-
-input[type=number]:before {
-  color: red;
-  content: "\25BC";
-  margin-bottom: 5px;
-  background-color: transparent;
-
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 select {
@@ -352,6 +343,10 @@ span#display {
 header {
   circle.sandbox {
     fill: $tertiary !important;
+  }
+
+  svg {
+    fill: $tertiary;
   }
 
 }

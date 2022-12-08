@@ -43,11 +43,10 @@ input[type=number]:hover { border-color: #586174; }
 
 input[type=number]:focus { border-color: #29A869; }
 
-input[type=number]:after, input[type=number]:before { position: absolute; pointer-events: none; }
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
-input[type=number]:after { color: blue; content: "\25B2"; }
-
-input[type=number]:before { color: red; content: "\25BC"; margin-bottom: 5px; background-color: transparent; }
+/* Firefox */
+input[type=number] { -moz-appearance: textfield; }
 
 select { background-color: transparent; border: none; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400; padding: 8px 12px; background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat; background-position: calc(100% - 0.75rem) center !important; -moz-appearance: none !important; -webkit-appearance: none !important; appearance: none !important; padding-right: 2rem !important; width: 100%; border-radius: 4px; }
 
@@ -82,6 +81,8 @@ span#display { display: block; text-align: left; width: 100%; margin: 0; padding
 .overlay { position: absolute; bottom: 0; background: black; background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); color: #E8EAED; width: 100%; font-size: 16px; text-transform: uppercase; letter-spacing: .1rem; font-weight: 600; line-height: 100%; padding: 64px 24px 16px 24px; text-align: center; box-sizing: border-box; }
 
 header circle.sandbox { fill: #29A869 !important; }
+
+header svg { fill: #29A869; }
 
 .form_field { position: relative; box-sizing: border-box; width: 450px; height: 85vh; margin: 64px; z-index: 9998; border-radius: 16px; backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25x); background-blend-mode: overlay; background-color: rgba(232, 234, 237, 0.8); resize: both; min-width: 350px; min-height: 350px; max-width: 600px; max-height: 85vh; overflow-y: hidden; }
 
